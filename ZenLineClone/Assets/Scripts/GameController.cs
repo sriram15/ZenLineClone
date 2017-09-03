@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void updateScore(){
-		this.score++;
+		this.score += this.bonus;
 	}
 	void stopScore(){
 		CancelInvoke("updateScore");

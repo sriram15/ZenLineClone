@@ -5,18 +5,42 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour {
 
-	Text scoreTxt, bonusTxt;
+	Text scoreTxt, bonusTxt, gameOverScoreTxt;
 	Image bonusProgress;
 	GameController gameController;
-	GameObject pauseMenu;
+	GameObject pauseMenu, gameOverMenu, tutorialMenu, tutFirstPanel, tutSecondPanel;
+	EventManager eventManager;
+
 	void Start(){
 		scoreTxt = GameObject.Find("ScoreText").GetComponent<Text>();
 		bonusTxt = GameObject.Find("BonusText").GetComponent<Text>();
 		bonusProgress = GameObject.Find("BonusProgressBar").GetComponent<Image>();
 		gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		pauseMenu = GameObject.Find("PauseMenu");
+		gameOverMenu = GameObject.Find("GameOverMenu");
+		tutorialMenu = GameObject.Find("TutorialMenu");
+		tutFirstPanel = GameObject.Find("TutorialFirstPanel");
+		tutSecondPanel = GameObject.Find("TutorialSecondPanel");
+		gameOverScoreTxt = GameObject.Find("GO_TxtScore").GetComponent<Text>();
 
+		gameOverMenu.SetActive(false);
 		pauseMenu.SetActive(false);
+
+		if(!PlayerPrefs.HasKey("TutorialShowed")){
+			gameController.pauseGame();
+			tutorialMenu.SetActive(true);
+			tutFirstPanel.SetActive(true);
+			tutSecondPanel.SetActive(false);
+		}else{
+			tutorialMenu.SetActive(false);
+		}
+
+		eventManager = GameObject.Find("EventManager").GetComponent<EventManager>();
+		eventManager.playerDeathEvent += showGameOverMenu;
+	}
+
+	void OnDisable(){
+		eventManager.playerDeathEvent -= showGameOverMenu;
 	}
 
 	void Update(){
@@ -38,5 +62,25 @@ public class UIManager : MonoBehaviour {
 
 	public void btnRestart(){
 		gameController.restartGame();
+	}
+	public void btnOkFirst(){
+		tutFirstPanel.SetActive(false);
+		tutSecondPanel.SetActive(true);
+	}
+
+	public void btnOkSecond(){
+		tutSecondPanel.SetActive(false);
+		tutorialMenu.SetActive(false);
+		gameController.resumeGame();
+		PlayerPrefs.SetInt("TutorialShowed", 1);
+	}
+
+	public void showGameOverMenu(){
+		StartCoroutine(IEnumShowGameOverMenu());
+	}
+	public IEnumerator IEnumShowGameOverMenu(){
+		yield return new WaitForSeconds(1);
+		gameOverScoreTxt.text = gameController.score + "";
+		gameOverMenu.SetActive(true);
 	}
 }

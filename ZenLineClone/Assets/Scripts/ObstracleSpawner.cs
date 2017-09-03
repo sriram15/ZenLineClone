@@ -18,7 +18,7 @@ public class ObstracleSpawner : MonoBehaviour {
 			if(transform.position.z < 15){
 				randIndex = 0;
 			}else{
-				randIndex = Random.Range(0,2);
+				randIndex = Random.Range(0,obs.Length);
 			}
 			
 	
