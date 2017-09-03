@@ -812,7 +812,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e15ce400e44c9a145a3bfa6cf6f3ed22, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -973,6 +973,11 @@ Prefab:
     - target: {fileID: 4622309628171066, guid: 2aadb099927588244ab5c4c40fc14071, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114736045330304496, guid: 2aadb099927588244ab5c4c40fc14071,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2aadb099927588244ab5c4c40fc14071, type: 2}
@@ -2019,11 +2024,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114087960848798370, guid: d656d07e11437374e888da3c28104708,
-        type: 2}
-      propertyPath: obs.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 4884357193983980, guid: d656d07e11437374e888da3c28104708, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2066,24 +2066,6 @@ Prefab:
       propertyPath: obsHolder
       value: 
       objectReference: {fileID: 1910745714}
-    - target: {fileID: 114087960848798370, guid: d656d07e11437374e888da3c28104708,
-        type: 2}
-      propertyPath: obs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1172904020236680, guid: 2a2964a64335b484389d66702fe20080,
-        type: 2}
-    - target: {fileID: 114087960848798370, guid: d656d07e11437374e888da3c28104708,
-        type: 2}
-      propertyPath: obs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1502253688474592, guid: a719338cdb1315446904921c763940aa,
-        type: 2}
-    - target: {fileID: 114087960848798370, guid: d656d07e11437374e888da3c28104708,
-        type: 2}
-      propertyPath: obs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1030627707918670, guid: db1dca6f5c801844b8dc29902558e19e,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d656d07e11437374e888da3c28104708, type: 2}
   m_IsPrefabParent: 0
@@ -2341,7 +2323,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: e15ce400e44c9a145a3bfa6cf6f3ed22, type: 3}
-    m_FontSize: 25
+    m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

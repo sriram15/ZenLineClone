@@ -6,15 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 
 	public int score;
-	public int bonus;
 	public float bonusProgressVal;
 	public bool isPlayerAlive;
 	public bool isGamePaused;
 	EventManager eventManager;
 	void Start(){
 		this.score = 0;
-		this.bonus = 1;
-		this.bonusProgressVal = 0f;
+		this.bonusProgressVal = 1f;
 		isPlayerAlive = true;
 		isGamePaused = false;
 
@@ -45,17 +43,10 @@ public class GameController : MonoBehaviour {
 	}
 
 	void updateScore(){
-		this.score += this.bonus;
+		this.score += (int)this.bonusProgressVal;
 	}
 	void stopScore(){
 		CancelInvoke("updateScore");
 		this.isPlayerAlive = false;
-	}
-
-	void Update(){
-		if(this.bonusProgressVal >= 1){
-			this.bonus++;
-			this.bonusProgressVal = 0f;
-		}
 	}
 }

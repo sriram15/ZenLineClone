@@ -55,4 +55,8 @@ MonoBehaviour:
   obs:
   - {fileID: 1620120627391604, guid: ced74d44d2fa713448e78ec6acec79e8, type: 2}
   - {fileID: 1309310617194452, guid: 6f5f3717ff5b52f448cf8290c590616f, type: 2}
+  - {fileID: 1172904020236680, guid: 2a2964a64335b484389d66702fe20080, type: 2}
+  - {fileID: 1502253688474592, guid: a719338cdb1315446904921c763940aa, type: 2}
+  - {fileID: 1030627707918670, guid: db1dca6f5c801844b8dc29902558e19e, type: 2}
+  - {fileID: 1494093142989528, guid: f5a586b0fc59c8c47ae2e58ede4298c4, type: 2}
   obsHolder: {fileID: 0}

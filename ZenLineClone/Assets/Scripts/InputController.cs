@@ -19,6 +19,9 @@ public class InputController : MonoBehaviour {
 						this.characterMovement.moveSide(this.currentTouch.deltaPosition.x);
 					}
 				}
+				if(this.gameController.bonusProgressVal > 1.01f){
+					this.gameController.bonusProgressVal -= Time.deltaTime * 0.05f;
+				}
 			}else{
 				this.gameController.bonusProgressVal += Time.deltaTime * 0.1f;
 			}

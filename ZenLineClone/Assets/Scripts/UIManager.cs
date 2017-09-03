@@ -45,8 +45,9 @@ public class UIManager : MonoBehaviour {
 
 	void Update(){
 		scoreTxt.text = gameController.score + "";
-		bonusTxt.text = "X" + gameController.bonus;
-		bonusProgress.fillAmount = gameController.bonusProgressVal;
+		bonusTxt.text = "X" + (int)gameController.bonusProgressVal;
+		var fillAmount = gameController.bonusProgressVal - (int)gameController.bonusProgressVal;
+		bonusProgress.fillAmount = fillAmount;
 	}
 
 	public void btnPause(){
