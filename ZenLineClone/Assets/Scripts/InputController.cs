@@ -11,7 +11,6 @@ public class InputController : MonoBehaviour {
 		this.gameController = GameObject.Find("GameController").GetComponent<GameController>();
 	}
 	void Update () {
-		Debug.Log(gameController.isPlayerAlive);
 		if(gameController.isPlayerAlive){
 			if ( Input.touchCount > 0 ){
 				for (int i = 0; i<Input.touchCount; i++){
